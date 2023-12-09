@@ -20,7 +20,7 @@ public:
 
     virtual int search(const std::vector<int>& arr, int target) = 0;
 
-    virtual void displaySearchResults(std::ostream& os, int result, int target) = 0;
+    void displaySearchResults(std::ostream& os, int result, int target) const;
 };
 
 #endif //ECOLE_CPP_F_SEARCHINGALGORITHM_H

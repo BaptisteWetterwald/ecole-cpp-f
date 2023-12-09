@@ -1,9 +1,7 @@
 #include "SearchingAlgorithm.h"
 #include "LinearSearch.h"
 #include "JumpSearch.h"
-//#include "linear_search.h"
-//#include "jump_search.h"
-//#include "binary_search.h"
+#include "BinarySearch.h"
 #include <iostream>
 #include <vector>
 #include <sstream>
@@ -22,7 +20,9 @@ int main(){
     ostringstream os;
 
     for (const auto algorithm : algorithms) {
+
         os << "Searching for " << target << " using ";
+
         if (dynamic_cast<LinearSearch*>(algorithm)) {
             os << "Linear Search:" << std::endl;
         } else if (dynamic_cast<JumpSearch*>(algorithm)) {
@@ -30,16 +30,18 @@ int main(){
         } else if (dynamic_cast<BinarySearch*>(algorithm)) {
             os << "Binary Search:" << std::endl;
         }
-        
+
         int result = algorithm->search(arr, target);
         algorithm->displaySearchResults(os, result, target);
+        SearchingAlgorithm::totalComparisons += algorithm->numberComparisons;
     }
 
+    SearchingAlgorithm::averageComparisons = (double) SearchingAlgorithm::totalComparisons / SearchingAlgorithm::totalSearch;
+
+    os << endl << "-------------------------" << endl;
     os << "Total searches: " << SearchingAlgorithm::totalSearch << endl;
     os << "Total comparisons across all searches: " << SearchingAlgorithm::totalComparisons << endl;
     os << "Average comparisons per search: " << SearchingAlgorithm::averageComparisons << endl;
 
-
     cout << os.str();
-
 }

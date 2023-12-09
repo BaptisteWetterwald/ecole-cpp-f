@@ -11,7 +11,6 @@
 class LinearSearch : public SearchingAlgorithm{
 public:
     int search(const std::vector<int>& arr, int target) override;
-    void displaySearchResults(std::ostream& os, int result, int target) override;
 };
 
 

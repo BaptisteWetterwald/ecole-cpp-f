@@ -28,5 +28,6 @@ add_executable(td2_exo1
         td2/exo1/BinarySearch.h
 )
 add_executable(td2_exo2 td2/exo2/matrix_main.cpp
-        td2/exo2/MatrixNumerical.h
-        td2/exo2/Matrix.h)
+        td2/exo2/matrix.h
+        td2/exo2/num_matrix.h
+)
