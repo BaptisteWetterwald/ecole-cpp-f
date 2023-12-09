@@ -15,3 +15,18 @@ add_executable(td1_exo1
         td1/exo1/my_class.cpp
         td1/exo1/my_class.h
 )
+
+add_executable(td2_exo1
+        td2/exo1/search_main.cpp
+        td2/exo1/SearchingAlgorithm.h
+        td2/exo1/SearchingAlgorithm.cpp
+        td2/exo1/LinearSearch.cpp
+        td2/exo1/LinearSearch.h
+        td2/exo1/JumpSearch.cpp
+        td2/exo1/JumpSearch.h
+        td2/exo1/BinarySearch.cpp
+        td2/exo1/BinarySearch.h
+)
+add_executable(td2_exo2 td2/exo2/matrix_main.cpp
+        td2/exo2/MatrixNumerical.h
+        td2/exo2/Matrix.h)
