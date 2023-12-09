@@ -9,7 +9,7 @@ int BinarySearch::search(const std::vector<int> &arr, int target) {
     totalSearch++;
     numberComparisons = 0;
     int left = 0;
-    int right = (int)arr.size() - 1;
+    int right = (int) arr.size() - 1;
     while (left <= right) {
         numberComparisons++;
         int mid = (left + right) / 2;

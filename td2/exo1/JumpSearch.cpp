@@ -9,7 +9,7 @@
 int JumpSearch::search(const std::vector<int> &arr, int target) {
     totalSearch++;
     numberComparisons = 0;
-    int n = (int)arr.size();
+    int n = (int) arr.size();
     int step = (int) sqrt(n);
     int prev = arr[0];
     while (arr[std::min(step, n) - 1] < target) {

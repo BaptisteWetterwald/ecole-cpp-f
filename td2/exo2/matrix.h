@@ -9,7 +9,7 @@
 #include <iostream>
 #include <sstream>
 
-template <typename T>
+template<typename T>
 class MatrixBase {
 private:
     size_t rows{};
@@ -19,11 +19,17 @@ protected:
     std::vector<std::vector<T>> matrix;
 public:
     MatrixBase(size_t rows, size_t cols);
-    MatrixBase(const MatrixBase<T>& matrix);
+
+    MatrixBase(const MatrixBase<T> &matrix);
+
     [[nodiscard]] size_t getRows() const;
+
     [[nodiscard]] size_t getCols() const;
+
     void addElement(size_t row, size_t col, T value);
+
     T getElement(size_t row, size_t col) const;
+
     void Display() const;
 };
 
@@ -35,7 +41,7 @@ MatrixBase<T>::MatrixBase(size_t rows, size_t cols) {
 
 
 template<typename T>
-MatrixBase<T>::MatrixBase(const MatrixBase<T>& matrix) {
+MatrixBase<T>::MatrixBase(const MatrixBase<T> &matrix) {
     this->rows = matrix.getRows();
     this->cols = matrix.getCols();
     this->matrix = matrix.matrix;
@@ -63,7 +69,7 @@ T MatrixBase<T>::getElement(size_t row, size_t col) const {
 
 template<typename T>
 void MatrixBase<T>::Display() const {
-    std::ostream& os = std::cout;
+    std::ostream &os = std::cout;
     for (size_t i = 0; i < this->rows; i++) {
         for (size_t j = 0; j < this->cols; j++) {
             os << this->matrix[i][j] << " ";
@@ -72,8 +78,8 @@ void MatrixBase<T>::Display() const {
     }
 }
 
-template <typename T>
-std::ostream& operator<<(std::ostream& os, const MatrixBase<T>& matrix) {
+template<typename T>
+std::ostream &operator<<(std::ostream &os, const MatrixBase<T> &matrix) {
     matrix.Display(os);
     return os;
 }

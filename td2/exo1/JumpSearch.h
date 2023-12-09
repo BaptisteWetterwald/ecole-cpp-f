@@ -8,9 +8,9 @@
 
 #include "SearchingAlgorithm.h"
 
-class JumpSearch : public SearchingAlgorithm{
+class JumpSearch : public SearchingAlgorithm {
 public:
-    int search(const std::vector<int>& arr, int target) override;
+    int search(const std::vector<int> &arr, int target) override;
 };
 
 

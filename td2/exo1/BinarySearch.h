@@ -9,7 +9,7 @@
 
 class BinarySearch : public SearchingAlgorithm {
 public:
-    int search(const std::vector<int>& arr, int target) override;
+    int search(const std::vector<int> &arr, int target) override;
 };
 
 #endif //ECOLE_CPP_F_BINARYSEARCH_H

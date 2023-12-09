@@ -8,21 +8,28 @@
 #include <cmath>
 #include "matrix.h"
 
-template <typename T>
+template<typename T>
 class MatrixNumerical : public MatrixBase<T> {
     static_assert(std::is_same<T, int>::value || std::is_same<T, double>::value || std::is_same<T, float>::value,
-        "Available types: int, double, and float");
+                  "Available types: int, double, and float");
 public:
     using MatrixBase<T>::MatrixBase;
-    MatrixNumerical(size_t rows, size_t cols);
+
+    [[maybe_unused]] MatrixNumerical(size_t rows, size_t cols);
+
     MatrixNumerical(size_t rows, size_t cols, T value);
+
     T getDeterminant() const;
 
     // define + operator
-    MatrixNumerical<T> operator+(const MatrixNumerical<T>& matrix) const;
-    MatrixNumerical<T> operator-(const MatrixNumerical<T>& matrix) const;
-    MatrixNumerical<T> operator*(const MatrixNumerical<T>& matrix) const;
-    MatrixNumerical<T> operator/(const MatrixNumerical<T>& matrix) const;
+    MatrixNumerical<T> operator+(const MatrixNumerical<T> &matrix) const;
+
+    MatrixNumerical<T> operator-(const MatrixNumerical<T> &matrix) const;
+
+    MatrixNumerical<T> operator*(const MatrixNumerical<T> &matrix) const;
+
+    MatrixNumerical<T> operator/(const MatrixNumerical<T> &matrix) const;
+
     static MatrixNumerical<T> getIdentity(int size);
 
     MatrixNumerical<T> getInverse() const;
@@ -56,14 +63,11 @@ MatrixNumerical<T> MatrixNumerical<T>::getInverse() const {
                 for (size_t l = 0; l < this->getCols(); l++) {
                     if (k < i && l < j) {
                         subMatrix.addElement(k, l, this->getElement(k, l));
-                    }
-                    else if (k < i && l > j) {
+                    } else if (k < i && l > j) {
                         subMatrix.addElement(k, l - 1, this->getElement(k, l));
-                    }
-                    else if (k > i && l < j) {
+                    } else if (k > i && l < j) {
                         subMatrix.addElement(k - 1, l, this->getElement(k, l));
-                    }
-                    else if (k > i && l > j) {
+                    } else if (k > i && l > j) {
                         subMatrix.addElement(k - 1, l - 1, this->getElement(k, l));
                     }
                 }
@@ -92,7 +96,8 @@ MatrixNumerical<T> MatrixNumerical<T>::getInverse() const {
 template<typename T>
 MatrixNumerical<T> MatrixNumerical<T>::operator*(const MatrixNumerical<T> &matrix) const {
     if (this->getCols() != matrix.getRows()) {
-        throw std::invalid_argument("Number of columns of the first matrix must be equal to the number of rows of the second matrix");
+        throw std::invalid_argument(
+                "Number of columns of the first matrix must be equal to the number of rows of the second matrix");
     }
     MatrixNumerical<T> result(this->getRows(), matrix.getCols());
     for (size_t i = 0; i < this->getRows(); i++) {
@@ -139,7 +144,7 @@ MatrixNumerical<T> MatrixNumerical<T>::operator+(const MatrixNumerical<T> &matri
 }
 
 template<typename T>
-MatrixNumerical<T>::MatrixNumerical(size_t rows, size_t cols) : MatrixBase<T>(rows, cols) {
+[[maybe_unused]] MatrixNumerical<T>::MatrixNumerical(size_t rows, size_t cols) : MatrixBase<T>(rows, cols) {
     this->matrix = std::vector<std::vector<T>>(rows, std::vector<T>(cols, 0));
 }
 
@@ -161,8 +166,7 @@ T MatrixNumerical<T>::getDeterminant() const {
             for (size_t k = 0; k < this->getCols(); k++) {
                 if (k < i) {
                     subMatrix.addElement(j - 1, k, this->getElement(j, k));
-                }
-                else if (k > i) {
+                } else if (k > i) {
                     subMatrix.addElement(j - 1, k - 1, this->getElement(j, k));
                 }
             }
