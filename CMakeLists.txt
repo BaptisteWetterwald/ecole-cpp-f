@@ -14,6 +14,9 @@ add_executable(td1_exo1
         td1/exo1/main.cpp
         td1/exo1/my_class.cpp
         td1/exo1/my_class.h
+        td3/exo1/main.cpp
+        td3/exo2/main.cpp
+        td3/exo3/main.cpp
 )
 
 add_executable(td2_exo1
@@ -27,7 +30,20 @@ add_executable(td2_exo1
         td2/exo1/BinarySearch.cpp
         td2/exo1/BinarySearch.h
 )
-add_executable(td2_exo2 td2/exo2/matrix_main.cpp
+add_executable(td2_exo2
+        td2/exo2/matrix_main.cpp
         td2/exo2/matrix.h
         td2/exo2/num_matrix.h
+)
+
+add_executable(td3_exo1
+        td3/exo1/main.cpp
+)
+
+add_executable(td3_exo2
+        td3/exo2/main.cpp
+)
+
+add_executable(td3_exo3
+        td3/exo3/main.cpp
 )
