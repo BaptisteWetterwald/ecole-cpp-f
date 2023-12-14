@@ -14,9 +14,6 @@ add_executable(td1_exo1
         td1/exo1/main.cpp
         td1/exo1/my_class.cpp
         td1/exo1/my_class.h
-        td3/exo1/main.cpp
-        td3/exo2/main.cpp
-        td3/exo3/main.cpp
 )
 
 add_executable(td2_exo1
