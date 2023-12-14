@@ -38,9 +38,9 @@ int BinarySearch::search_rec(const std::vector<int> &arr, int target, int left, 
     int mid = (left + right) / 2;
     if (arr[mid] == target) {
         return mid;
-    } else if (arr[mid] < target) {
-        return search_rec(arr, target, mid + 1, right);
-    } else {
-        return search_rec(arr, target, left, mid - 1);
     }
+    if (arr[mid] < target) {
+        return search_rec(arr, target, mid + 1, right);
+    }
+    return search_rec(arr, target, left, mid - 1);
 }
