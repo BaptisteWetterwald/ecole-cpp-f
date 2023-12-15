@@ -46,15 +46,16 @@ add_executable(td3_exo3
 )
 
 add_executable(td4_pokemon
-        td4-pokemon/main.cpp
-        td4-pokemon/headers/pokemon_card.h
-        td4-pokemon/pokemon_card.cpp
         td4-pokemon/headers/card.h
-        td4-pokemon/card.cpp
+        td4-pokemon/headers/energy_card.h
+        td4-pokemon/headers/pokemon_card.h
         td4-pokemon/headers/trainer_card.h
-        td4-pokemon/trainer_card.cpp
-        td4-pokemon/main.cpp
         td4-pokemon/headers/player.h
+
+        td4-pokemon/card.cpp
+        td4-pokemon/energy_card.cpp
+        td4-pokemon/pokemon_card.cpp
+        td4-pokemon/trainer_card.cpp
         td4-pokemon/player.cpp
-        td4-pokemon/player.cpp
+        td4-pokemon/main.cpp
 )

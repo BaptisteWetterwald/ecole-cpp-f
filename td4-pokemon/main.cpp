@@ -2,7 +2,6 @@
 // Created by Baptiste WETTERWALD on 14/12/2023.
 //
 
-#include "headers/card.h"
 #include "headers/pokemon_card.h"
 #include "headers/energy_card.h"
 #include "headers/trainer_card.h"

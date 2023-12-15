@@ -6,8 +6,14 @@
 #define ECOLE_CPP_F_ENERGY_H
 
 
-class Energy {
+#include "card.h"
 
+class EnergyCard : public Card {
+public:
+    EnergyCard(string energyType);
+    void displayInfo() const override;
+
+    string energyType;
 };
 
 

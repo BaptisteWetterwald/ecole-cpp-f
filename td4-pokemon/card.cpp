@@ -3,3 +3,11 @@
 //
 
 #include "headers/card.h"
+
+string Card::getName() const {
+    return cardName;
+}
+
+Card::Card(string name) {
+    this->cardName = name;
+}

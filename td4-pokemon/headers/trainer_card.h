@@ -6,8 +6,13 @@
 #define ECOLE_CPP_F_TRAINER_CARD_H
 
 
-class trainer_card {
+#include "card.h"
 
+class TrainerCard : public Card {
+public:
+    TrainerCard(string name, string trainerEffect);
+    void displayInfo() const override;
+    string trainerEffect;
 };
 
 
