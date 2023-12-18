@@ -14,19 +14,19 @@ PokemonCard::PokemonCard(string cardName, string pokemonType, string familyName,
     this->evolutionLevel = evolutionLevel;
     this->maxHP = maxHP;
     this->hp = maxHP;
-    this->attacks = vector<tuple<int, int, string, int>>();
-    this->attacks.emplace_back(costAttack1, 0, descriptionAttack1, damageAttack1);
-    this->attacks.emplace_back(costAttack2, 0, descriptionAttack2, damageAttack2);
+    this->attacks = new vector<tuple<int, int, string, int>>();
+    this->attacks->emplace_back(costAttack1, 0, descriptionAttack1, damageAttack1);
+    this->attacks->emplace_back(costAttack2, 0, descriptionAttack2, damageAttack2);
 }
 
 void PokemonCard::displayInfo() const {
     cout << "Pokemon Card - Name : " << cardName << ", Type: " << pokemonType << ", Evolution Level: " << evolutionLevel << " of the family \"" << familyName << "\", HP: " << hp << endl;
     cout << "Attacks:" << endl;
-    for (int i = 0; i < attacks.size(); i++) {
+    for (int i = 0; i < attacks->size(); i++) {
         cout << "Attack #" << i << ":" << endl;
-        cout << "Attack cost: " << get<0>(attacks[i]) << endl;
-        cout << "Attack current energy storage: " << get<1>(attacks[i]) << endl;
-        cout << "Attack description: " << get<2>(attacks[i]) << endl;
-        cout << "Attack damage: " << get<3>(attacks[i]) << endl;
+        cout << "Attack cost: " << get<0>(attacks->at(i)) << endl;
+        cout << "Attack current energy storage: " << get<1>(attacks->at(i)) << endl;
+        cout << "Attack description: " << get<2>(attacks->at(i)) << endl;
+        cout << "Attack damage: " << get<3>(attacks->at(i)) << endl;
     }
 }

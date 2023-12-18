@@ -18,7 +18,7 @@ public:
     int evolutionLevel;
     int maxHP;
     int hp;
-    vector<tuple<int, int, string, int>> attacks; // cost, actual cost, description, damage
+    vector<tuple<int, int, string, int>>* attacks; // cost, actual cost, description, damage
 };
 
 
