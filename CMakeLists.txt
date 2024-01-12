@@ -59,3 +59,17 @@ add_executable(td4_pokemon
         td4-pokemon/player.cpp
         td4-pokemon/main.cpp
 )
+
+add_executable(td5_exo1
+        td5/TimeSeriesGenerator.cpp
+        td5/TimeSeriesGenerator.h
+        td5/GaussianGenerator.cpp
+        td5/GaussianGenerator.h
+        td5/main.cpp
+        td5/StepGenerator.cpp
+        td5/StepGenerator.h
+        td5/SinWaveGenerator.cpp
+        td5/SinWaveGenerator.h
+        td5/TimeSeriesDataset.cpp
+        td5/TimeSeriesDataset.h
+)
