@@ -52,3 +52,10 @@ void TimeSeriesDataset::addTimeSeries(vector<double> timeSeries) {
         }
     }
 }
+
+TimeSeriesDataset::TimeSeriesDataset(bool znormalize, bool isTrain) {
+    this->znormalize = znormalize;
+    this->isTrain = isTrain;
+    this->maxLength = 0;
+    this->numberOfSamples = 0;
+}
